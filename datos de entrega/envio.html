@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>Ecopipo</title>
+    <link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Arvo:400,700' rel='stylesheet' type='text/css'>
+ 
+    
+    <img src="Regex/logo.png" id="logo">
+<head>
+
+    <title>Datos de envío</title>
+
+</head>
+
+<body>
+
+
+    <form id="Form">
+
+        <label for="direccion">Dirección:</label><br>
+
+        <input type="text" id="direccion" name="direccion"><br><hr>
+
+        <label for="direccion">Id de producto:</label><br>
+
+        <input type="text" id="producto" name="producto"><br><hr>
+
+
+
+       <br> <label for="pais">País:</label><br>
+
+        <input type="radio" id="mex" name="pais" value="México">
+
+        <label for="mex">México</label><br>
+
+        <input type="radio" id="col" name="pais" value="Colombia">
+
+
+
+       
+
+        <br><label for="typeen">Método de pago:</label><br>
+
+        
+
+        <input type="checkbox" id="efec" name="typeen" value="Efectivo">
+
+        
+
+        <label for="efec">Efectivo</label><br>
+
+        
+
+        <input type="checkbox" id="tar" name="typeen" value="Tarjeta">
+
+        
+
+        <label for="tar">Targeta</label><br>
+
+        
+
+
+         
+
+
+
+        <br><label for="mepag">Tipo de entrega:</label><br>
+
+        <select id="mepag" name="mepag">
+
+            <option value="Entrega en paquetería">Entrega por paquetería</option>
+
+            <option value="Entrega a domicilio">Entrega a domicilio</option>
+
+         
+
+        </select><br><hr><br>
+
+
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+
+
+    <script>
+
+        document.getElementById("Form").addEventListener("submit", function(event){
+
+            event.preventDefault();
+
+            var direccion = document.getElementById("direccion").value;
+            var producto = document.getElementById("producto").value;
+
+
+            var pais = document.querySelector('input[name="pais"]:checked').value;
+
+            var typeen = [];
+
+            document.querySelectorAll('input[name="typeen"]:checked').forEach(function(el){
+
+                typeen.push(el.value);
+
+            });
+
+            var mepag = document.getElementById("mepag").value;
+
+
+
+            alert("Datos de entrega y pago:\nDirección: " + direccion + "\nProducto: " + producto +"\nPaís: " + pais + "\nMétodo de pago: " + typeen.join(", ") + "\nTipo de entrega: " + mepag);
+
+        });
+
+    </script>
+    <style>
+        :root {
+    --colorTextos: #49454567;
+}
+
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background:orchid;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #B06AB3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #B06AB3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+label, input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+#logo{
+    width:200px;
+    height: 95px;
+    position:absolute;
+    top:5px;
+    left: 600px;
+    
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+</body>
+
+</html>
