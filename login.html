@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresar</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="css/login.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
-<body onload="checarSesion()">
-    <form action="" method="POST" id="form">
+<body onload="checarSesion();">
+    <form action="" method="POST" id="formIniciar">
         <div class="form">
         <h1>Ya tienes cuenta?</h1>
         <h1> Ingresa</h1>
@@ -21,12 +21,13 @@
                 <label for="">Password</label>
             </div>
             
-            <button type="submit">Suscribirte</button>
+            <button type="submit" onclick="loginUsuario()">Abrir sesión</button>
             <p class="warnings" id="warnings"></p>
         </div>
-        <a href="signup.html">Entrar</a>
+        <button><a href="signup.html">Registrarse</a></button>
     </form>
 
-    <script src="app.js"></script>
-</body>
+    <script src="js/appLogin.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
 </html>

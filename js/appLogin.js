@@ -9,13 +9,14 @@ const checarSesion=()=>{
 }
 
 const registrarUsuario= async()=>{
-    var correo=document.querySelector("#correo").value;   
+
     var nombre=document.querySelector("#nombre").value;
+    var correo=document.querySelector("#correo").value;   
     var password=document.querySelector("#password").value;
 
-    if(correo.trim()==='' ||
-    password.trim()==='' ||
-    nombre.trim()==='' ){
+    if(nombre.trim()==='' ||
+    correo.trim()==='' ||
+    password.trim()==='' ){
         Swal.fire({
             icon: 'error',
             title: 'ERROR',
